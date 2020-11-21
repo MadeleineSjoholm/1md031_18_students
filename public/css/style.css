@@ -1,0 +1,159 @@
+body {
+    font-family: "Times New Roman";
+    font-size: 18px;
+    color: rgb(0, 0, 0)
+}
+
+
+.header{
+  overflow:hidden;
+  height: 300px;
+  margin: 1px 2px 3px 4px;
+  width: 100%;
+  padding-top: 15px;
+}
+
+#image{
+  opacity: 0.7;
+}
+#headline_text{
+  position: absolute;
+  margin-top: -40%;
+  color: #FFFFFF;
+}
+
+#burgerSelection{
+  color: black;
+  margin-left: 50px;
+}
+
+
+
+ #burgerJs{
+    background-color: #DEDEDE;
+    color: #444;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    border: 20px dotted rgba(0, 0, 0, 0.93);
+    margin-top: 0px;
+    margin-right: 100px;
+    margin-left: 50px;
+    border-width: 5px;
+    padding-left: 30px;
+    padding-right: 20px;
+ }
+
+ #burgerVue{
+    background-color: #DEDEDE;
+    color: #444;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    border: 20px dotted rgba(0, 0, 0, 0.93);
+    margin-top: 0px;
+    margin-right: 100px;
+    margin-left: 50px;
+    border-width: 5px;
+    padding-left: 30px;
+    padding-right: 20px;
+ }
+
+ .wrapper {
+     background-color: #DEDEDE;
+     border: 4px solid black;
+     display: grid;
+     grid-gap: 10px;
+     grid-template-columns: 400px 400px 400px;
+     color: #444;
+  }
+
+
+  .box {
+     margin: auto;
+      color: #444;
+      border-radius: 5px;
+      padding: 20px;
+      font-size: 150%;
+
+  }
+
+ .a {
+     grid-column: 1;
+ }
+ .b {
+     grid-column: 2;
+ }
+ .c {
+     grid-column: 3;
+ }
+ .d {
+   border: 2px solid #000000;
+   grid-column: 1;
+   grid-row: 2;
+ }
+ .e {
+   border: 2px solid #000000;
+   grid-column: 2;
+   grid-row: 2;
+ }
+ .f {
+   border: 2px solid #000000;
+   grid-column: 3;
+   grid-row: 2;
+ }
+ .g {
+     grid-column: 1;
+     grid-row: 3;
+     font-size: 100%;
+ }
+ .h {
+     grid-column: 2;
+     grid-row: 3;
+     font-size: 100%;
+ }
+ .i {
+     grid-column: 3;
+     grid-row: 3;
+     font-size: 100%;
+ }
+
+.burgers {
+  padding: 5px;
+}
+
+#burger{
+
+}
+
+#spec {
+  color: #8364CE;
+  font-weight: bold;
+}
+
+.contact {
+  padding: 5px;
+  margin-top: 5px;
+  margin-right: 730px;
+  margin-left: 50px;
+  border: 3px solid black;
+  background-color: #DEDEDE;
+  color: #444;
+}
+#contact{
+
+}
+
+button{
+  margin-top: 10px;
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #DEDEDE;
+}
+
+button:hover {
+  background-color: #8364CE;
+}
+
+.line{
+  margin-top: 20px;
+  border-bottom: 1px solid #000; /* whichever color you prefer */
+}

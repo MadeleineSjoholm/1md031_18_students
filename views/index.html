@@ -1,9 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-    </body>
+<head>
+
+  <title>Tech Burger</title>
+  <meta charset="utf-8"/>
+
+  <script defer src="/socket.io/socket.io.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://vuejs.org/js/vue.js"></script>
+  <script type="text/javascript" src="js/menu.js" defer></script>
+  <script src="js/js_script.js" defer></script>
+  <script src="js/vue_script.js" defer></script>
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/deli-very.css">
+  <script src="/vue/vue.js" defer></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <!-- <script src="js/deli-very.js" defer></script> -->
+
+</head>
+<body>
+  <header class="header">
+    <img id="image" src="https://www.jackentertainment.com/thistledown/wp-content/uploads/sites/6/2017/06/Web_Header_1480x500_GEN_Dining_Stackd_Burger.jpg">
+    <h1 id="headline_text">Welcome to TechBurger</h1>
+  </header>
+</body>
+
+<body>
+  <div id="burgerSelection">
+    <h2> Our Burger Selection </h2>
+    <h4> Select your burger: </h4>
+  </div>
+
+  <!--
+
+  <section class="burgers" id="burgerJs">
+
+</section>
+
+-->
+
+
+<section class="burgers" id="burgerVue">
+  <div v-for="burger in burgermenu">
+    <h4 align="left" Hspace=300px> {{ burger.name }} </h4>
+    <img v-bind:src="burger.img" width="200" height="120" >
+    <ul>
+      <li> {{ burger.kcal }}  </li>
+      <li> {{ burger.gluten }}  </li>
+      <li> {{ burger.lactose }}  </li>
+      <li> {{ burger.vegetarian }}  </li>
+    </ul>
+
+    <p align="center">  <input type="checkbox" v-bind:value="burger.name" v-bind:id="burger.id" v-model="burgers">{{burger.name}}</p>
+  </div>
+</section>
+
+
+
+
+
+
+<!--   HTML-KOD
+<section class="burgers" id="burgers">
+
+<h2> Our Burger selection </h2>
+<p> This is where you select your <span id="spec">TechBurger</span></p>
+<div class="wrapper" id="test">
+</div>
+<div class="wrapper">
+<div class="box a">The Original TechBurger</div>
+<div class="box b">HalloumiTech</div>
+<div class="box c">ChickenTech</div>
+<div class="box d"><img src="https://lh3.googleusercontent.com/proxy/6Ww4Ridks0D8BiV7tljBFeVW7HHWNl_xLUivlc7_VH2GhjLJyFwVN76AcMGBwTPYav1sNuNohGQOAfYdmwHjM4TB5lXzwOwtb8RrlDwj6mqdNyLS1gk"  width="200"></div>
+<div class="box e"><img src="https://rethinkburgers.se/wp-content/uploads//2018/06/Max_Umami_Halloumi_Burgare.png" width="200"></div>
+<div class="box f"><img src="https://www.pngarts.com/files/3/Chicken-Burger-PNG-Picture.png" width="200"></div>
+<div class="box g">
+<td><ul>
+<li>Nötkött</li>
+<li>Tomat, sallad, lök, majonäs</li>
+<li>Cheddarost, <span id="spec">innehåller laktos</span></li>
+<li>Surdegsbröd, <span id="spec">innehåller gluten</span></li>
+</ul></td></div>
+<div class="box h">
+<td><ul>
+<li>Halloumi</li>
+<li>Lökringar</li>
+<li>Picklad rödlök</li>
+<li>Briochebröd, <span id="spec">innehåller gluten</span></li>
+</ul></td></div>
+<div class="box i">
+<td><ul>
+<li>Nötkött</li>
+<li>Bacon, karamelliserad lök</li>
+<li>Cheddarost, <span id="spec">innehåller laktos</span></li>
+<li>Surdegsbröd, <span id="spec">innehåller gluten</span></li>
+</ul></td></div>
+</div>
+
+<section/>
+-->
+
+</body>
+
+<body>
+  <main>
+    <section class="contact" id="contact">
+
+
+      <section>
+        <h2>Customer information</h2>
+        <p> This is where you provide necessary information </p>
+      </section>
+      <section>
+        <h3>Delivery information</h3>
+        <p> This is where you type in your delivery information </p>
+      </section>
+
+        <form>
+          <p>
+            <label for="fullname">Full name</label><br>
+            <input type="text" id="fullname" name="fn" required="required" placeholder="First and last name" v-model="fullname">
+          </p>
+          <p>
+            <label for="email">E-mail</label><br>
+            <input type="email" id="email" name="em" required="required" placeholder="E-mail address" v-model="email">
+          </p>
+
+          <h3>Payment information</h3>
+          <p>
+            <label for="recipient">Select payment method</label><br>
+            <select id="payment" name="pmt" v-model="payment">
+              <option value="Kortbetalning">Kortbetalning </option>
+              <option value="Faktura">Faktura</option>
+              <option value="PayPal">PayPal</option>
+              <option value="Swish">Swish</option>
+            </select>
+          </p>
+
+          <h3>Gender</h3>
+          <p>
+            <input v-model="male" type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input v-model="female" type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input v-model="other" type="radio" id="other" name="gender" value="other">
+            <label for="other">Non-binary</label><br>
+            <input checked="checked" v-model="dont" type="radio" id="dont" name="gender" value="Do not wish to provide" >
+            <label for="dont">Do not wish to provide</label>
+          </p>
+        </form>
+
+
+
+      <h1> Click in the map! </h1>
+      <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+      <div class="view-box">
+        <div id="dots" v-on:click="displayOrder">
+          <div
+          v-for="(order, key) in orders"
+          v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}">
+          T
+        </div>
+      </div>
+    </div>
+
+
+    <button id="submitButton" type="submit" v-on:click="markDone(fullname, email, payment, male, female, other, dont); addOrder();">
+      Send Info <img src="https://png.pngitem.com/pimgs/s/185-1852219_delivery-send-canceled-order-icon-hd-png-download.png" width="30">
+    </button>
+
+    <div id="order">
+    </div>
+
+  </section>
+</main>
+
+
+
+
+
+<div class="line"></div>
+
+<footer>
+  <p> © 2020 Copyright TechBurger </p>
+</footer>
+</body>
 </html>
